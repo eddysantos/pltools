@@ -3,13 +3,14 @@
 
 <footer class="d-flex justify-content-between align-items-center">
   <div class="">
-    Welcome <?php echo $_SESSION['user_info']['Nombre']?>!
+    Welcome <?php echo $_SESSION['user']['data']['nombre']?>!
   </div>
 
 </footer>
 
 <?php
 
+require $root . '/pltools/resources/php/modales/cerrarSesion.php';
 
  ?>
 

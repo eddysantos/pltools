@@ -12,10 +12,10 @@ require $root . '/pltools/Resources/PHP/Utilities/header.php';
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
       <!-- Bootstrap CSS -->
-      <link rel="stylesheet" href="/plsuite/Resources/Bootstrap4/css/bootstrap.min.css">
-      <link rel="stylesheet" media="screen and (min-device-width: 701px)" href="/plsuite/Resources/CSS/main.css">
+      <link rel="stylesheet" href="/pltools/Resources/Bootstrap4/css/bootstrap.min.css">
+      <link rel="stylesheet" media="screen and (min-device-width: 701px)" href="/pltools/Resources/CSS/main.css">
 
-      <link rel="stylesheet" media="screen and (min-device-width: 701px)" href="/plsuite/Resources/fontAwesome/css/font-awesome.min.css">
+      <link rel="stylesheet" media="screen and (min-device-width: 701px)" href="/pltools/Resources/fontAwesome/css/font-awesome.min.css">
       <!-- <link href="https://fonts.googleapis.com/css?family=Sansita" rel="stylesheet"> -->
       <title>Prolog Transportation Inc</title>
     </head>

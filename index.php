@@ -6,21 +6,30 @@ if (isset($_POST['login'])) {
     include ('resources/php/loginDatabase.php');
 
     $usuario = $_POST['userName'];
-    $pass = $_POST['password'];
+    $pass = hash('sha256', $_POST['password']);
 
-    $loginQry = "SELECT * FROM cu_usuarios WHERE s_nombre_usuario = ? AND s_password = ?";
+    $loginQry = "SELECT pk_id_user idusuario, s_nombre nombre, s_apellido apellido FROM cu_lista_usuarios WHERE s_username = ? AND s_password = ?";
 
 
     $stmt = $db->prepare($loginQry) or die ('Error Login('.$db->errno.'): '.$db->error);
     $stmt->bind_param('ss',$usuario, $pass);
     $stmt->execute();
     $results = $stmt->get_result();
-    $row = $results->fetch_array(MYSQLI_ASSOC);
+    $_SESSION['user']['data'] = $results->fetch_array(MYSQLI_ASSOC);
     $validador = $results->num_rows;
 
     if ($validador == 1) {
-      $_SESSION['user_info'] = $row;
-      header('location:locations/toolbox');
+      $id = $_SESSION['user']['data']['idusuario'];
+
+      $qry = "SELECT * FROM permisos_pltoolbox WHERE fk_id_usuario = $id";
+      $stmt = $db->query($qry);
+      $_SESSION['user']['permissions'] = $stmt->fetch_assoc();
+
+      if ($_SESSION['user']['permissions']['acceso_principal'] == 1) {
+        header('location:locations/toolbox');
+      } else {
+        header('Refresh:0');
+      }
 
       exit();
     }else {
@@ -53,8 +62,10 @@ if (isset($_POST['login'])) {
  				</div>
  				<div class="login-info">
  					<form class="form-group p-5" method="post">
+            <label for="userName">Nombre de Usuario</label>
  						<input type="text" class="form-control login-input" name="userName" placeholder="Username" value="">
- 						<input type="password" class="form-control login-input mt-3" name="password" placeholder="Password" value="">
+            <label for="userName" class="mt-3">Contraseña</label>
+ 						<input type="password" class="form-control login-input" name="password" placeholder="Password" value="">
  						<br>
  						<div class="">
  							<!-- <a href="#" class="text-secondary">Forgot password?</a> -->
