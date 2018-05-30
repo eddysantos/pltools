@@ -9,7 +9,28 @@ require $root . '/pltools/Resources/PHP/Utilities/header.php';
   <html>
    <body style="min-height:100%">
 
-    <div class="container-fluid pt-3" style="margin-top: 75px">
+    <div class="container-fluid pt-3" style="margin-top: 75px; margin-bottom: 70px">
+      <div class="d-inline-block">
+        <div class="card toolbox-item">
+          <div class="card-body">
+            <h4 class="card-title">Bitácora Operaciones</h4>
+            <p>Control interno de operaciones.</p>
+            <a role="button" href="#" class="btn btn-info toolbox-btn">Abrir</a>
+          </div>
+        </div>
+      </div>
+      <div class="d-inline-block">
+        <div class="card toolbox-item">
+          <div class="card-body">
+            <h4 class="card-title">Procesamiento de Facturas</h4>
+            <p>Esta herramienta permite procesar la factura de motores.</p>
+            <a role="button" href="invoice_processing" class="btn btn-info toolbox-btn">Abrir</a>
+          </div>
+        </div>
+      </div>
+  
+    </div>
+    <!-- <div class="container-fluid pt-3" style="margin-top: 75px">
       <div class="row">
         <div class="col-lg-3">
           <div class="card toolbox-item">
@@ -30,7 +51,7 @@ require $root . '/pltools/Resources/PHP/Utilities/header.php';
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
 
    </body>

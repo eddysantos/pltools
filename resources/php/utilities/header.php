@@ -34,7 +34,7 @@
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" disabled href="/pltools/Ubicaciones/Config">Configuracion</a>
-              <a class="dropdown-item disabled" disabled href="#">Usuarios</a>
+              <a class="dropdown-item" href="users">Usuarios</a>
             </div>
           </li>
           <li class="nav-item">
